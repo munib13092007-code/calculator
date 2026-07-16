@@ -37,6 +37,7 @@ main :nth-child(1){
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 5px 1fr;
     margin:2%;
+    padding:2%;
     justify-items: right;
     align-items: last baseline;
 }
