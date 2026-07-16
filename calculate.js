@@ -5,16 +5,17 @@ let operation = document.getElementById("operation");
 let current = num1;
 
 
-document.getElementById("clear").addEventListener(`click`, function () {
+
+function append(value) {
+    current.textContent += value;
+}
+
+function clear() {
     num1.textContent = "";
     num2.textContent = "";
     operation.textContent = "";
     result.textContent = "0";
     current = num1;
-});
-
-function append(value) {
-    current.textContent += value;
 }
 
 function setOperation(operator) {
@@ -28,10 +29,10 @@ function setOperation(operator) {
 }
 
 function calc() {
-    if (num1 == "")
+    if (num1.textContent == "")
         return 0;
-    else if (num2 == "")
-        return num1;
+    else if (num2.textContent == "")
+        return num1.textContent;
 
     switch (operation.textContent) {
         case "+": return parseInt(num1.textContent) + parseInt(num2.textContent);
@@ -57,4 +58,27 @@ document.getElementById("minus").addEventListener(`click`, function () { setOper
 document.getElementById("multiply").addEventListener(`click`, function () { setOperation("x"); })
 document.getElementById("divide").addEventListener(`click`, function () { setOperation("/"); })
 document.getElementById("equal").addEventListener(`click`, function () { result.textContent = calc(); })
+document.getElementById("clear").addEventListener(`click`, function () { clear(); });
+
+document.addEventListener(`keydown`, (e) => {
+    switch (e.key) {
+        case "1": append(1); break;
+        case "2": append(2); break;
+        case "3": append(3); break;
+        case "4": append(4); break;
+        case "5": append(5); break;
+        case "6": append(6); break;
+        case "7": append(7); break;
+        case "8": append(8); break;
+        case "9": append(9); break;
+        case "0": append(0); break;
+        case "+": setOperation("+"); break;
+        case "-": setOperation("-"); break;
+        case "x": setOperation("x"); break;
+        case "/": setOperation("/"); break;
+        case "=": result.textContent = calc(); break;
+        case "c": clear();
+        
+    }
+})
 
