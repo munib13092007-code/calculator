@@ -12,24 +12,7 @@ body{
     padding: 5%;
 }
 
-header{
-    width: 100%;
-    background-color: aqua;
-    color:white;
-    font-weight: bold;
-    font-size: 200%;
-    justify-items: center;
-    /* align-items: first baseline; */
-}
 
-footer{
-    width: 100%;
-    background-color: black;
-    color: white;
-    font-size: 50%;
-    justify-items: center;
-
-}
 
 main{
     height: 80%;
